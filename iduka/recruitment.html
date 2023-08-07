@@ -16,10 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -67,7 +69,9 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Berkas</h6>
                         <a class="collapse-item" href="pelamar.html">Pelamar Magang</a>
-                        
+                        <a class="collapse-item" href="project.html">Projects aktif</a>
+                        <a class="collapse-item" href="pending-project.html">Projects Pending</a>
+                        <a class="collapse-item" href="selesai-project.html">Projects selesai</a>
                     </div>
                 </div>
             </li>
@@ -91,26 +95,6 @@
                     <span>Open recruitment</span></a>
             </li>
 
-            <!-- Nav Item projects -->
-            <div class="sidebar-heading">
-                project 
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Management</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Projects</h6>
-                        <a class="collapse-item" href="project.html">Projects aktif</a>
-                        <a class="collapse-item" href="pending-project.html">Projects Pending</a>
-                    </div>
-                </div>
-            </li>
             
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -340,22 +324,22 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Open recruitment</h1>
+                    <h1 class="h3 mb-4 text-gray-800"></h1>
 
                 </div>
                 <!-- /.container-fluid -->
 
            
 
-<!-- Profile Section -->
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
+<!-- open recruitment Section -->
+
             <div class="card">
-                <div class="card-body text-center">
+                
+                <div class="card-body text-left">
                     
                     <h4 class="card-title">Open recruitment</h4>
-                    <form>
+                   
+                    <form >
                         <div class="form-group">
                             <label for="name">Nama</label>
                             <input type="text" class="form-control" id="name" placeholder="Nama Perusahaan">
@@ -376,18 +360,28 @@
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="occupation" placeholder="Alamat Email">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Keterangan</label>
-                            <input type="text" class="form-control" id="occupation" placeholder="Keterangan lowongan yang di buka">
-                        </div>
+                        <div id="keterangan"></div>
+                            <script>
+                            $('#keterangan').summernote({
+                                placeholder: 'Keterangan',
+                                tabsize: 2,
+                                height: 120,
+                                toolbar: [
+                                ['style', ['style']],
+                                ['font', ['bold', 'underline', 'clear']],
+                                ['color', ['color']],
+                                ['para', ['ul', 'ol', 'paragraph']],
+                                ['table', ['table']],
+                                ['insert', ['link', 'picture', 'video']],
+                                ['view', ['fullscreen', 'codeview', 'help']]
+                                ]
+                            });
+                            </script>
                         
                         <button type="button" class="btn btn-primary" >Submit</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 </div>
 <!-- End of Main Content -->
